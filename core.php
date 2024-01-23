@@ -8,7 +8,8 @@
     switch($action) {
 
         case "list":
-            print_r(json_encode($hymns->show_hymns($_REQUEST["table"])));
+            header('Content-Type: application/json');
+            echo json_encode($hymns->show_hymns($_REQUEST["table"]));
         break;
 
     }

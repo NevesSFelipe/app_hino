@@ -12,6 +12,7 @@ class Database {
     public function __construct()
     {
         $this->connect = mysqli_connect(self::SERVER, self::USER, self::PASSWORD, self::DATABASE);
+        $this->connect->set_charset("utf8mb4");
         
         if(!$this->connect) {
             die("Não foi possível conectar no banco. Por favor, tente novamente mais tarde!");
